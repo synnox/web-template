@@ -1,3 +1,64 @@
-This website is inspired by https://0xploit.net/3; it is a mockup that you can take and recreate however you like.
+# Personal Website
 
-![Preview](assets/prewiew.png)
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1373733233111466034/1548480378237620244/prewiew.png?ex=6aa7363b&is=6aa5e4bb&hm=d7173fe3b4fa3f6653e705a80772d519b053f7bcc51d40606e215a203ac4bdcc&" width="800" alt="Personal Website Preview">
+</p>
+
+<h2 align="center">Personal Website</h2>
+
+<p align="center">
+  A personal website inspired by 
+  <a href="https://0xploit.net/3">0xploit.net</a>.
+</p>
+
+---
+
+## About
+
+This project is a personal website mockup inspired by the design and atmosphere of 0xploit.net.
+
+It was created for learning, experimentation and practicing web development.
+
+## Features
+
+* Modern and minimalist design
+* Responsive layout
+* Custom animations
+* Interactive elements
+* Music player
+* Personal portfolio style
+
+## Technologies
+
+* HTML5
+* CSS3
+* JavaScript
+
+## Preview
+
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1373733233111466034/1548480378237620244/prewiew.png?ex=6aa7363b&is=6aa5e4bb&hm=d7173fe3b4fa3f6653e705a80772d519b053f7bcc51d40606e215a203ac4bdcc&" width="800" alt="Website Preview">
+</p>
+
+## Project Structure
+
+```text
+personal-website/
+├── assets/
+│   ├── prewiew.png
+│   ├── p.png
+│   └── ...
+├── index.html
+├── Amnésie-by-damso.mp4
+└── README.md
+```
+
+## Credits
+
+Inspired by [0xploit.net](https://0xploit.net/3).
+
+This project is not affiliated with or endorsed by 0xploit.net.
+
+## License
+
+This project is intended for personal and educational use.
