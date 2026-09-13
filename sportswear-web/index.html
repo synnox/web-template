@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- TEMPLATE E-COMMERCE GENERIQUE : remplacez les textes entre [[ ]] par votre contenu avant de partager -->
+<title>Vêtements de sport</title>
+<meta name="description" content="Template e-commerce générique de vêtements de sport. Personnalisez produits, marque et textes avant de partager."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Vêtements de sport — Template e-commerce"/>
+<meta property="og:description" content="Template e-commerce générique de vêtements de sport."/>
+<meta property="og:image" content="assets/images/image1.jpg"/>
+<meta name="theme-color" content="#FAFAF8"/>
+<link rel="canonical" href="index.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<!-- ── OVERLAYS (modals, sidebars) ───────────────────────────────── -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Cart Sidebar -->
+<aside class="cart-sidebar" id="cartSidebar" aria-label="Panier" role="dialog">
+  <div class="cart-header">
+    <h2>Votre panier</h2>
+    <button class="close-btn" id="closeCart" aria-label="Fermer le panier">&#10005;</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty">Votre panier est vide.</div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-summary">
+      <div class="summary-row"><span>Sous-total</span><span id="cartSubtotal">0,00 €</span></div>
+      <div class="summary-row"><span>Livraison</span><span id="cartShipping">Offerte dès 60 €</span></div>
+      <div class="summary-row total"><span>Total</span><span id="cartTotal">0,00 €</span></div>
+    </div>
+    <button class="btn btn-dark btn-block" id="checkoutBtn">Passer la commande</button>
+    <p class="cart-note">Paiement sécurisé • Livraison offerte dès 60 € • Retours 30 jours</p>
+  </div>
+</aside>
+
+<!-- Product Modal -->
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-content">
+    <button class="modal-close" id="closeModal" aria-label="Fermer">&#10005;</button>
+    <div class="modal-grid">
+      <div class="modal-media">
+        <img id="modalImg" src="" alt=""/>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="product-cat" id="modalCat">Catégorie</span>
+        <h2 id="modalTitle">Produit</h2>
+        <div class="modal-price">
+          <span class="price-now" id="modalPrice">0,00 €</span>
+          <span class="price-before" id="modalOldPrice" style="display:none;"></span>
+        </div>
+        <p class="modal-desc" id="modalDesc">Description du produit.</p>
+        
+        <fieldset class="option-group">
+          <legend>Taille</legend>
+          <div class="size-options" id="modalSizes"></div>
+        </fieldset>
+        
+        <fieldset class="option-group">
+          <legend>Couleur</legend>
+          <div class="color-options" id="modalColors"></div>
+        </fieldset>
+        
+        <div class="quantity-selector">
+          <label for="modalQty">Quantité</label>
+          <div class="qty-input">
+            <button class="qty-btn minus" aria-label="Diminuer">−</button>
+            <input type="number" id="modalQty" value="1" min="1" max="10"/>
+            <button class="qty-btn plus" aria-label="Augmenter">+</button>
+          </div>
+        </div>
+        
+        <div class="modal-actions">
+          <button class="btn btn-dark btn-block" id="modalAddCart">Ajouter au panier</button>
+          <button class="btn btn-outline btn-block" id="modalWish">&#9825; Ajouter aux favoris</button>
+        </div>
+        
+        <div class="modal-meta">
+          <div><strong>Livraison</strong> Offerte dès 60 €</div>
+          <div><strong>Retours</strong> 30 jours gratuits</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Search Modal -->
+<div class="modal search-modal" id="searchModal" role="dialog" aria-modal="true">
+  <div class="modal-content modal-search">
+    <button class="modal-close" id="closeSearch" aria-label="Fermer">&#10005;</button>
+    <form class="search-form" id="searchForm">
+      <label for="searchInput" class="visually-hidden">Rechercher</label>
+      <input type="search" id="searchInput" placeholder="Rechercher un produit..." autocomplete="off" autofocus/>
+      <button type="submit">Rechercher</button>
+    </form>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-suggestions">
+      <p>Suggestions :</p>
+      <div class="suggestion-tags" id="searchTags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Auth Modal -->
+<div class="modal" id="authModal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <button class="modal-close" id="closeAuth" aria-label="Fermer">&#10005;</button>
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">Connexion</button>
+      <button class="auth-tab" data-tab="register">Inscription</button>
+    </div>
+    <form class="auth-form" id="loginForm">
+      <div class="form-group"><label for="loginEmail">Email</label><input type="email" id="loginEmail" required/></div>
+      <div class="form-group"><label for="loginPass">Mot de passe</label><input type="password" id="loginPass" required/></div>
+      <label class="checkbox"><input type="checkbox"/> Se souvenir de moi</label>
+      <button class="btn btn-dark btn-block" type="submit">Se connecter</button>
+      <p class="auth-link"><a href="#" id="forgotLink">Mot de passe oublié ?</a></p>
+    </form>
+    <form class="auth-form hidden" id="registerForm">
+      <div class="form-row"><div class="form-group"><label for="regFirst">Prénom</label><input type="text" id="regFirst" required/></div><div class="form-group"><label for="regLast">Nom</label><input type="text" id="regLast" required/></div></div>
+      <div class="form-group"><label for="regEmail">Email</label><input type="email" id="regEmail" required/></div>
+      <div class="form-group"><label for="regPass">Mot de passe</label><input type="password" id="regPass" minlength="6" required/></div>
+      <label class="checkbox"><input type="checkbox" required/> J'accepte les <a href="#">CGV</a> et la <a href="#">politique de confidentialité</a></label>
+      <button class="btn btn-dark btn-block" type="submit">Créer mon compte</button>
+    </form>
+  </div>
+</div>
+
+<!-- Newsletter Popup -->
+<div class="newsletter-popup" id="newsletterPopup" role="dialog" aria-label="Newsletter">
+  <div class="newsletter-content">
+    <button class="newsletter-close" id="closeNewsletter" aria-label="Fermer">&#10005;</button>
+    <div class="newsletter-icon">✉</div>
+    <h3>Rejoignez le club</h3>
+    <p>−20 % sur votre première commande + accès aux ventes privées.</p>
+    <form id="newsletterForm">
+      <input type="email" placeholder="Votre email" required/>
+      <button class="btn btn-dark" type="submit">S'inscrire</button>
+    </form>
+    <label class="checkbox"><input type="checkbox"/> Ne plus afficher</label>
+  </div>
+</div>
+
+<!-- Cookie Consent -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookies">
+  <p>Nous utilisons des cookies pour améliorer votre expérience. <a href="#">En savoir plus</a></p>
+  <div class="cookie-actions">
+    <button class="btn btn-outline" id="cookieReject">Refuser</button>
+    <button class="btn btn-dark" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="announce-bar">Livraison offerte dès 60 € &nbsp;·&nbsp; Retours gratuits 30 jours &nbsp;·&nbsp; −20 % sur votre première commande</div>
+  <div class="header-main container">
+    <a class="brand" href="index.html">[[Votre marque]]<span>.</span></a>
+    <nav class="nav">
+      <a href="#femme">Femme</a>
+      <a href="#homme">Homme</a>
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#bestsellers">Best-sellers</a>
+      <a href="#marque">La marque</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="openSearch" aria-label="Rechercher">&#9906;</button>
+      <button class="icon-btn" id="openAuth" aria-label="Mon compte">&#9679;</button>
+      <button class="icon-btn theme-btn" id="themeBtn" aria-label="Activer le mode sombre">&#9788;</button>
+      <button class="icon-btn cart-btn" id="openCart" aria-label="Panier">Panier <span class="cart-count">0</span></button>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- SLOT 1 : HERO -->
+  <section class="hero" id="top">
+    <div class="hero-slide active" style="background-image:url('assets/images/image1.jpg')">
+      <div class="hero-copy container"><span class="kicker">Nouvelle collection</span><h1>Bougez.<br/>Brillez.</h1><p>Des vêtements de sport pensés pour votre rythme : confort, maintien et style.</p><a class="btn btn-light" href="#nouveautes">Découvrir la collection</a></div>
+    </div>
+    <div class="hero-slide" style="background-image:url('assets/images/image2.jpg')">
+      <div class="hero-copy container"><span class="kicker">Best-sellers</span><h1>Le confort<br/>à chaque séance.</h1><p>Nos leggings signature allient maintien 3D et matière respirante.</p><a class="btn btn-light" href="#bestsellers">Voir les best-sellers</a></div>
+    </div>
+    <div class="hero-slide" style="background-image:url('assets/images/image3.jpg')">
+      <div class="hero-copy container"><span class="kicker">Homme</span><h1>L'essentiel<br/>réinventé.</h1><p>T-shirts, shorts et ensembles techniques pour vos entraînements.</p><a class="btn btn-light" href="#homme">Explorer la gamme homme</a></div>
+    </div>
+    <div class="hero-nav"><button class="hero-arrow prev" aria-label="Précédent">&#8592;</button><div class="hero-dots"></div><button class="hero-arrow next" aria-label="Suivant">&#8594;</button></div>
+  </section>
+
+  <!-- SLOT 2b : RÉASSURANCE -->
+  <section class="reassurance container" id="reassurance">
+    <div class="reass-item"><span class="reass-icon">✓</span><div><strong>Livraison offerte</strong><small>Dès 60 € d'achat — [[Délai livraison]]</small></div></div>
+    <div class="reass-item"><span class="reass-icon">↺</span><div><strong>Retours gratuits</strong><small>30 jours pour changer d'avis</small></div></div>
+    <div class="reass-item"><span class="reass-icon">●</span><div><strong>Paiement sécurisé</strong><small>CB, PayPal, Apple Pay — [[Autres]]</small></div></div>
+  </section>
+
+  <!-- SLOT 2 : CATÉGORIES -->
+  <section class="categories container" id="femme">
+    <div class="section-head"><h2>Explorez par univers</h2><p>Trois univers, une même promesse : bouger librement.</p></div>
+    <div class="cat-grid">
+      <a class="cat-card" href="#femme"><div class="cat-img"><img src="assets/images/image4.jpg" alt="Catégorie 1"/><span class="cat-tag">Catégorie 1</span></div><div class="cat-overlay"><span class="cat-cta">Découvrir →</span></div></a>
+      <a class="cat-card" href="#homme"><div class="cat-img"><img src="assets/images/image5.jpg" alt="Catégorie 2"/><span class="cat-tag">Catégorie 2</span></div><div class="cat-overlay"><span class="cat-cta">Découvrir →</span></div></a>
+      <a class="cat-card" href="#accessoires"><div class="cat-img"><img src="assets/images/image6.jpg" alt="Catégorie 3"/><span class="cat-tag">Catégorie 3</span></div><div class="cat-overlay"><span class="cat-cta">Découvrir →</span></div></a>
+    </div>
+  </section>
+
+  <!-- SLOT 3 : NOUVEAUTÉS -->
+  <section class="products container" id="nouveautes">
+    <div class="section-head"><h2>Nouveautés</h2><p>Les pièces incontournables de cette saison.</p></div>
+    <div class="toolbar">
+      <div class="filter-group"><label for="filterCat" class="visually-hidden">Catégorie</label><select id="filterCat"><option value="">Toutes</option><option>Catégorie 1</option><option>Catégorie 2</option><option>Catégorie 3</option><option>Catégorie 4</option><option>Catégorie 5</option></select></div>
+      <div class="filter-group"><label for="filterSort" class="visually-hidden">Trier</label><select id="filterSort"><option value="">Pertinence</option><option value="price-asc">Prix croissant</option><option value="price-desc">Prix décroissant</option><option value="newest">Nouveautés</option><option value="rated">Mieux notés</option></select></div>
+    </div>
+    <div class="product-grid" id="productGridNouveautes"></div>
+    <div class="load-more"><button class="btn btn-outline" id="loadMoreBtn" type="button">Voir plus de produits</button></div>
+  </section>
+
+  <!-- SLOT 4 : PROMO -->
+  <section class="promo-full" id="homme">
+    <div class="promo-copy container"><span class="kicker kicker-dark">Programme membre</span><h2>Rejoignez le club</h2><p>−20 % sur votre première commande, accès anticipé aux drops et points fidélité sur chaque achat.</p><a class="btn btn-dark" href="#footer">Devenir membre — c'est gratuit</a></div>
+  </section>
+
+  <!-- SLOT 5 : BEST-SELLERS -->
+  <section class="products container" id="bestsellers">
+    <div class="section-head"><h2>Les plus aimés</h2><p>Les pièces préférées de la communauté.</p></div>
+    <div class="toolbar">
+      <div class="filter-group"><label for="filterCat2" class="visually-hidden">Catégorie</label><select id="filterCat2"><option value="">Toutes</option><option>Catégorie 1</option><option>Catégorie 2</option><option>Catégorie 3</option><option>Catégorie 4</option><option>Catégorie 5</option></select></div>
+      <div class="filter-group"><label for="filterSort2" class="visually-hidden">Trier</label><select id="filterSort2"><option value="">Pertinence</option><option value="price-asc">Prix croissant</option><option value="price-desc">Prix décroissant</option><option value="rated">Mieux notés</option></select></div>
+    </div>
+    <div class="product-grid" id="productGridBestsellers"></div>
+  </section>
+
+  <!-- SLOT 6 : AVIS CLIENTS -->
+  <section class="testimonials container" id="avis">
+    <div class="section-head"><h2>Ils nous font confiance</h2><p>[[Texte de présentation des avis]]</p></div>
+    <div class="testi-grid">
+      <article class="testi-card">
+        <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>« [[Texte d'avis client 1]] »</p>
+        <span class="testi-author"><strong>[[Prénom]]</strong> · Achat vérifié</span>
+      </article>
+      <article class="testi-card">
+        <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+        <p>« [[Texte d'avis client 2]] »</p>
+        <span class="testi-author"><strong>[[Prénom]]</strong> · Achat vérifié</span>
+      </article>
+      <article class="testi-card">
+        <div class="stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+        <p>« [[Texte d'avis client 3]] »</p>
+        <span class="testi-author"><strong>[[Prénom]]</strong> · Achat vérifié</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- SLOT 6 : MARQUE -->
+  <section class="brand-story container" id="marque">
+    <div class="brand-img"><img src="assets/images/logo.svg" alt="Logo" loading="lazy"/></div>
+    <div class="brand-text"><span class="kicker kicker-dark">La marque</span><h2>Pensé pour bouger.<br/>Conçu pour durer.</h2><p>Des vêtements de sport performants, élégants et accessibles. Nos matières techniques sèchent vite, soutiennent bien et résistent à des centaines d'entraînements.</p><ul class="values"><li><strong>Maintien 3D</strong> — des coutures qui épousent vos mouvements.</li><li><strong>Matières certifiées</strong> — techniques, respirantes et durables.</li><li><strong>Du XXS au 4XL</strong> — toutes les morphologies.</li></ul><a class="btn btn-dark" href="#footer">Notre histoire →</a></div>
+  </section>
+
+  <!-- SLOT 7 : FAQ -->
+  <section class="faq container" id="faq">
+    <div class="section-head"><h2>Questions fréquentes</h2><p>[[Texte FAQ]]</p></div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>Livraison & retours</summary>
+        <p>[[Texte : délais de livraison, frais, retours et échanges. Remplacez ce contenu.]]</p>
+      </details>
+      <details class="faq-item">
+        <summary>Guide des tailles</summary>
+        <p>[[Texte : comment choisir sa taille, tableau des mesures. Remplacez ce contenu.]]</p>
+      </details>
+      <details class="faq-item">
+        <summary>Paiement & sécurité</summary>
+        <p>[[Texte : moyens de paiement acceptés, données protégées. Remplacez ce contenu.]]</p>
+      </details>
+      <details class="faq-item">
+        <summary>Contact & service client</summary>
+        <p>[[Texte : horaires, email, téléphone. Remplacez ce contenu.]]</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><a class="brand brand-footer" href="index.html">[[Votre marque]]<span>.</span></a><p>Vêtements de sport performants, élégants et accessibles. Bougez librement.</p><div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="TikTok">TT</a><a href="#" aria-label="YouTube">YT</a></div></div>
+    <div class="footer-col"><h4>Boutique</h4><a href="#femme">Femme</a><a href="#homme">Homme</a><a href="#nouveautes">Nouveautés</a><a href="#bestsellers">Best-sellers</a></div>
+    <div class="footer-col"><h4>Aide</h4><a href="#reassurance">Livraison & retours</a><a href="#faq">Guide des tailles</a><a href="#faq">Contact</a><a href="#faq">FAQ</a></div>
+    <div class="footer-col"><h4>L'entreprise</h4><a href="#marque">Notre histoire</a><a href="#footer">Mentions légales</a><a href="#footer">Confidentialité</a><a href="#footer">CGV</a></div>
+  </div>
+  <div class="footer-bottom container"><span>© 2026 — Template e-commerce générique.</span></div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut" title="Retour en haut">&#8593;</button>
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
