@@ -15,7 +15,7 @@ Le projet propose une interface volontairement minimaliste permettant de parcour
 
 ## Inspiration
 
-Le projet est principalement inspiré de **[Neal.fun](https://neal.fun/)** et de son principe consistant à réunir plusieurs créations web dans un même espace.
+Le projet est principalement inspiré de https://neal.fun/ et de son principe consistant à réunir plusieurs créations web dans un même espace.
 
 L'idée retenue est notamment de :
 
@@ -50,7 +50,7 @@ Chaque carte peut contenir :
 - le nom du site ;
 - un lien permettant d'accéder au projet.
 
-```text
+text
 ┌─────────────────┐
 │                 │
 │     IMAGE       │
