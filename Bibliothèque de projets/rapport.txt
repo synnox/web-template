@@ -1,0 +1,20 @@
+========================================
+ webcloner - rapport de clonage
+========================================
+Source           : https://aywenfun.fr/
+Date             : 2026-09-09 18:23:16
+Duree            : 1.40345 s
+Dossier          : C:\Users\sn\Desktop\Sn_web_gui_pro\build\output\aywenfun.fr
+
+Pages HTML       : 4
+Feuilles CSS     : 1
+Scripts JS       : 11
+Images           : 4
+Polices          : 5
+Videos           : 0
+Audio            : 0
+Autres           : 0
+----------------------------------------
+Fichiers totaux  : 25
+Poids total      : 1.4 MiB
+Erreurs          : 0
