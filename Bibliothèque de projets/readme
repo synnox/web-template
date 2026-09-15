@@ -1,0 +1,68 @@
+# YOURWEB
+
+> Une bibliothèque de projets web et de plateformes, inspirée de l'univers et de l'approche de [Neal.fun](https://neal.fun/).
+
+## Présentation
+
+**YOURWEB** est un projet web inspiré de **Neal.fun**, un site qui rassemble différentes expériences et créations web au sein d'une interface simple et accessible.
+
+L'objectif de YOURWEB est de reprendre cette idée de **bibliothèque de projets web**, mais en l'adaptant à une sélection de sites, plateformes et réseaux sociaux.
+
+Le projet propose une interface volontairement minimaliste permettant de parcourir rapidement les différents sites disponibles.
+
+> **YOURWEB n'est pas affilié à Neal.fun.**  
+> Le projet s'inspire de son concept et de son approche visuelle, tout en proposant sa propre identité et son propre contenu.
+
+## Inspiration
+
+Le projet est principalement inspiré de **[Neal.fun](https://neal.fun/)** et de son principe consistant à réunir plusieurs créations web dans un même espace.
+
+L'idée retenue est notamment de :
+
+- centraliser plusieurs projets au même endroit ;
+- privilégier une interface simple ;
+- permettre une navigation rapide entre les différents contenus ;
+- présenter les projets sous forme de cartes ;
+- garder une expérience légère et accessible.
+
+YOURWEB cherche cependant à développer sa propre identité autour de cette idée.
+
+## Fonctionnalités
+
+- Bibliothèque de sites et projets
+- Affichage sous forme de grille
+- Cartes avec aperçu et nom du site
+- Accès direct aux plateformes
+- Interface simple et minimaliste
+- Design responsive
+- Liens vers les réseaux sociaux
+- Pages dédiées aux CGU et aux données
+- Page de suppression des données
+- Mentions légales
+
+## Aperçu
+
+L'interface principale présente les différents projets sous forme de cartes.
+
+Chaque carte peut contenir :
+
+- une image ou une miniature ;
+- le nom du site ;
+- un lien permettant d'accéder au projet.
+
+```text
+┌─────────────────┐
+│                 │
+│     IMAGE       │
+│                 │
+├─────────────────┤
+│     Site 1      │
+└─────────────────┘
+
+┌─────────────────┐
+│                 │
+│     IMAGE       │
+│                 │
+├─────────────────┤
+│     Site 2      │
+└─────────────────┘
