@@ -1,20 +1,4 @@
 ========================================
- webcloner - rapport de clonage
+invisioncheats web
 ========================================
-Source           : https://invisioncheats.com/
-Date             : 2026-09-16 20:09:33
-Duree            : 4.68353 s
-Dossier          : C:\Users\sn\Desktop\Sn_web_gui_pro\build\output\invisioncheats.com
-
-Pages HTML       : 30
-Feuilles CSS     : 1
-Scripts JS       : 22
-Images           : 8
-Polices          : 11
-Videos           : 0
-Audio            : 0
-Autres           : 0
-----------------------------------------
-Fichiers totaux  : 72
-Poids total      : 7.0 MiB
-Erreurs          : 0
+Source code of https://invisioncheats.com/
