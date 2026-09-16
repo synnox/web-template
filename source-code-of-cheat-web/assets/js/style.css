@@ -1,0 +1,885 @@
+/*
+ Theme Name:   Woodmart Child
+ Description:  Woodmart Child Theme
+ Author:       XTemos
+ Author URI:   http://xtemos.com
+ Template:     woodmart
+ Version:      1.0.0
+ Text Domain:  woodmart
+*/
+
+/* ==============================
+   GENERAL / GLOBAL
+   ============================== */
+
+.wd-fontsize-xs {
+    font-size: 16px !important;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #E59B2A, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+p a {
+    color: rgb(202, 93, 253) !important;
+}
+
+p a:hover {
+    color: rgb(221, 153, 252) !important;
+}
+
+/* ==============================
+   ACCORDION
+   ============================== */
+
+.wd-accordion.wd-style-shadow > .wd-accordion-item {
+    border-radius: 12px !important;
+    border: 1px solid #374151 !important;
+}
+
+/* ==============================
+   PAGE TITLE / HERO
+   ============================== */
+
+.wd-page-title {
+    background-image: url("../images/AZURABACKGROUNDS_copy.jpg") !important;
+}
+
+/* ==============================
+   BADGES & LABELS (global)
+   ============================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.badge-purple {
+    background: linear-gradient(to right, rgba(211, 87, 253, 0.2), rgba(35, 211, 255, 0.2));
+    border: 1px solid rgba(236, 72, 153, 0.1);
+}
+
+.badge-blue {
+    background: rgba(8, 145, 178, 0.2);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    color: #22d3ee;
+}
+
+.badge-orange {
+    background: rgba(249, 115, 22, 0.2);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    color: #fb923c;
+}
+
+/* ==============================
+   PURCHASE BUTTON (global helper)
+   ============================== */
+
+.purchaseButton a {
+    padding: 5px 20px;
+    display: inline-flex;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+/* ==============================
+   INFO BOX
+   ============================== */
+
+#advancedFeatures .wd-info-box {
+    border: 1px solid #FFFFFF14;
+}
+
+/* ==============================
+   CAROUSEL / PRODUCT LABELS
+   ============================== */
+
+#mainCarousel .product-labels {
+    display: none !important;
+}
+
+/* ==============================
+   WOOCOMMERCE – PRODUCT PRICES
+   ============================== */
+
+.wd-product .price {
+    font-size: 155% !important;
+}
+
+.product_list_widget > li .widget-product-info .price {
+    font-size: 1.5rem !important;
+}
+
+/* ==============================
+   WOOCOMMERCE – BUTTONS & CHECKOUT
+   ============================== */
+
+.woocommerce-mini-cart__buttons .checkout {
+    color: #3E3E3E !important;
+}
+
+:is(.woocommerce-order-downloads, .woocommerce-order-details) .button {
+    color: #fff !important;
+}
+
+.return-to-shop .button {
+    color: #3E3E3E !important;
+}
+
+/* ==============================
+   CHEAT STATUS BADGES
+   ============================== */
+
+.cheatSupportedOn {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    opacity: 0.70;
+    font-weight: 400;
+}
+
+.cheatStatus {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 1px;
+    padding: 1em;
+    min-width: 100%;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    margin: 0;
+}
+
+.undetected {
+    background: rgba(30, 219, 50, 0.20);
+    color: #1edb32;
+}
+
+.updating {
+    background: rgba(255, 217, 102, 0.20);
+    color: #ffd966;
+}
+
+.detected {
+    background: rgba(244, 67, 54, 0.20);
+    color: #f44336;
+}
+
+.beta {
+    background: rgba(150, 146, 146, 0.20);
+    color: #969292;
+}
+
+/* ==============================
+   CRYPTO CHECKOUT
+   ============================== */
+
+.mycryptocheckout.online_payment_instructions {
+    background: #0f0f0f !important;
+    border: 1px solid #ffffff38 !important;
+}
+
+.mycryptocheckout .to_input input {
+    background-color: #0f0f0f !important;
+    border: 1px solid #ffffff38 !important;
+}
+
+.mycryptocheckout.online_payment_instructions h2 {
+    background: #B353E0 !important;
+}
+
+/* ==============================
+   TESTIMONIALS – CAROUSEL SPACING FIX
+   ==============================
+   Problem war: ssc-review-box und wd-carousel-item waren dasselbe Element.
+   Swiper setzt width: Npx als Inline-Style direkt auf wd-carousel-item.
+   Das padding war korrekt (15px) aber die Box war genauso breit wie der Slide,
+   sodass kein visueller Abstand entstand.
+   Fix: ssc-review-slide ist jetzt der Swiper-Wrapper, ssc-review-box ist innen.
+*/
+
+.testimon-style-info-top .ssc-review-slide,
+.testimon-style-boxed .ssc-review-slide {
+    box-sizing: border-box !important;
+    padding: 0 calc(var(--wd-gap, 30px) / 2) !important;
+    display: flex !important;
+    align-items: stretch !important;
+    height: auto !important;
+}
+
+/* ssc-review-box nimmt den vollen Platz innerhalb des padded Wrappers */
+.testimon-style-info-top .ssc-review-slide .ssc-review-box,
+.testimon-style-boxed .ssc-review-slide .ssc-review-box {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Swiper-Wrap: stretch damit alle Karten gleich hoch sind */
+.testimon-style-info-top .wd-carousel .wd-carousel-wrap,
+.testimon-style-boxed .wd-carousel .wd-carousel-wrap {
+    align-items: stretch !important;
+}
+
+/* ==============================
+   TESTIMONIALS – CARD (info-top / boxed)
+   ============================== */
+
+.ssc-review-box {
+    background: rgba(34, 34, 34, 0.45);
+    border: 1px solid #2d3748;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.ssc-review-box:hover {
+    transform: translateY(-3px);
+    border-color: #f5a623;
+}
+
+.ssc-review-quote-mark {
+    font-size: 2.5rem;
+    line-height: 1;
+    color: #f5a623;
+    opacity: 0.5;
+    font-family: Georgia, serif;
+    flex-shrink: 0;
+}
+
+.ssc-review-text-wrap {
+    height: 112px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ssc-review-text-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.ssc-review-text {
+    color: #ccc;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.ssc-review-divider {
+    border: none;
+    border-top: 1px solid #2d3748;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.ssc-review-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.ssc-review-bio {
+    flex: 1;
+    min-width: 0;
+}
+
+.ssc-review-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ssc-review-source {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+.ssc-review-stars-row {
+    display: flex;
+    gap: 3px;
+    margin-top: 4px;
+}
+
+/* ==============================
+   TESTIMONIALS – NO BOX (default)
+   ============================== */
+
+.ssc-review-nobox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.875rem;
+    padding: 0.5rem;
+}
+
+.ssc-review-avatar-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.ssc-review-avatar-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f5a623;
+}
+
+.ssc-review-avatar-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ssc-review-avatar-init {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f5a623;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    border: 3px solid #f5a623;
+}
+
+.ssc-review-stars {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    padding: 3px 7px;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.ssc-review-quote-mark {
+    font-size: 2.5rem;
+    color: #f5a623;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+    line-height: 0.8;
+    margin-top: 0.5rem;
+}
+
+.ssc-review-quote-close {
+    margin-top: -0.5rem;
+}
+
+.ssc-review-meta {
+    text-align: center;
+}
+
+/* ==============================
+   SHARED STAR CSS
+   ============================== */
+
+.ssc-star {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #f5a623;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    flex-shrink: 0;
+}
+
+/* ==============================
+   VERIFIED BADGE
+   ============================== */
+
+.ssc-review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 3px 8px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.ssc-verified-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ==============================
+   PRICING TABLE – BADGE PILL (Variante B)
+   Schwebt oben mittig ueber dem Card-Rand
+   ============================== */
+
+/* Card: overflow visible damit Badge rausragen kann */
+.ssc-pricing-tables-wrapper .ssc-pricing-card {
+    overflow: visible !important;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-pill {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 5px 14px;
+    border-radius: 9999px;
+    white-space: nowrap;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-yellow {
+    background: #f5a623;
+    color: #1a1a1a;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-yellow .ssc-badge-dot {
+    background: #1a1a1a;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-green {
+    background: #10b981;
+    color: #fff;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-green .ssc-badge-dot {
+    background: #fff;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-red {
+    background: #e53e3e;
+    color: #fff;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-red .ssc-badge-dot {
+    background: #fff;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-blue {
+    background: #3182ce;
+    color: #fff;
+}
+
+.ssc-pricing-tables-wrapper .ssc-badge-blue .ssc-badge-dot {
+    background: #fff;
+}
+
+/* ==============================
+   PRICING TABLE – CARD
+   ============================== */
+
+.ssc-pricing-tables-wrapper .ssc-pricing-card {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.ssc-pricing-tables-wrapper .ssc-pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ssc-pricing-tables-wrapper .ssc-pricing-card.ssc-popular {
+    border-color: #f5a623;
+    box-shadow: 0 0 24px rgba(245, 166, 35, 0.15);
+}
+
+.ssc-pricing-tables-wrapper .ssc-pricing-card.ssc-popular:hover {
+    box-shadow: 0 16px 40px rgba(245, 166, 35, 0.25);
+}
+
+.ssc-pricing-tables-wrapper {
+    padding-top: 20px; /* Damit schwebende Badges nicht abgeschnitten werden */
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-header {
+    padding: 2.25rem 1.75rem 1.5rem; /* Extra oben fuer Badge-Abstand */
+    text-align: center;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #f5a623;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+}
+
+.ssc-pricing-tables-wrapper .ssc-price-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+}
+
+.ssc-pricing-tables-wrapper .ssc-currency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f5a623;
+    padding-top: 8px;
+    line-height: 1;
+}
+
+.ssc-pricing-tables-wrapper .ssc-amount {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.ssc-pricing-tables-wrapper .ssc-suffix {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+.ssc-pricing-tables-wrapper .ssc-features {
+    padding: 1.25rem 1.75rem;
+    flex: 1;
+}
+
+.ssc-pricing-tables-wrapper .ssc-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 0.875rem;
+    color: #ccc;
+}
+
+.ssc-pricing-tables-wrapper .ssc-feature:last-child {
+    border-bottom: none;
+}
+
+.ssc-pricing-tables-wrapper .ssc-tick {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ssc-pricing-tables-wrapper .ssc-tick::before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    width: 5px;
+    height: 2px;
+    background: #f5a623;
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+.ssc-pricing-tables-wrapper .ssc-tick::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 11px;
+    height: 2px;
+    background: #f5a623;
+    transform: rotate(-45deg);
+    border-radius: 1px;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-footer {
+    padding: 0 1.75rem 1.75rem;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-footer .ssc-btn,
+.ssc-pricing-tables-wrapper .ssc-plan-footer .button,
+.ssc-pricing-tables-wrapper .ssc-plan-footer a {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 2px solid #f5a623 !important;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    background: #f5a623 !important;
+    color: #1a1a1a !important;
+    box-sizing: border-box;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-footer .ssc-btn:hover,
+.ssc-pricing-tables-wrapper .ssc-plan-footer .button:hover,
+.ssc-pricing-tables-wrapper .ssc-plan-footer a:hover {
+    background: transparent !important;
+    color: #f5a623 !important;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline .ssc-btn,
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline .button,
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline a {
+    background: transparent !important;
+    color: #f5a623 !important;
+}
+
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline .ssc-btn:hover,
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline .button:hover,
+.ssc-pricing-tables-wrapper .ssc-plan-footer.ssc-btn-outline a:hover {
+    background: #f5a623 !important;
+    color: #1a1a1a !important;
+}
+
+/* ==============================
+   CHEAT STATUS WIDGET
+   ============================== */
+
+.ssc-cs-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.ssc-cs-pill {
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    border: 1.5px solid;
+}
+
+.ssc-cs-table {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(229, 155, 42, 0.18);
+}
+
+.ssc-cs-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 22px;
+    background: #161410;
+    border-bottom: 1px solid rgba(229, 155, 42, 0.07);
+    position: relative;
+    transition: background 0.22s ease;
+}
+
+.ssc-cs-row:last-child { border-bottom: none; }
+
+.ssc-cs-row::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: transparent;
+    transition: background 0.22s ease;
+}
+
+.ssc-cs-row:hover { background: rgba(229, 155, 42, 0.07); }
+
+.ssc-cs-row.cs-row-undetected:hover::before { background: #4ade80; }
+.ssc-cs-row.cs-row-updating:hover::before   { background: #E59B2A; }
+.ssc-cs-row.cs-row-detected:hover::before   { background: #f87171; }
+.ssc-cs-row.cs-row-offline:hover::before    { background: #555;    }
+.ssc-cs-row.cs-row-beta:hover::before       { background: #a5b4fc; }
+
+.ssc-cs-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    transition: color 0.22s ease;
+}
+
+.ssc-cs-row:hover .ssc-cs-name { color: #E59B2A; }
+
+.ssc-cs-os { display: flex; flex-direction: column; gap: 2px; }
+
+.ssc-cs-os-label {
+    font-size: 9px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.ssc-cs-os-val {
+    font-size: 11px;
+    color: #E59B2A;
+    font-weight: 500;
+}
+
+.ssc-cs-status-wrap { min-width: 125px; }
+
+.ssc-cs-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 7px 15px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    border: 1.5px solid;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.ssc-cs-row:hover .ssc-cs-status { transform: translateY(-1px); }
+
+.ssc-cs-row.cs-row-undetected:hover .ssc-cs-status { box-shadow: 0 4px 14px rgba(74, 222, 128, 0.2);  }
+.ssc-cs-row.cs-row-updating:hover   .ssc-cs-status { box-shadow: 0 4px 14px rgba(229, 155, 42, 0.25); }
+.ssc-cs-row.cs-row-detected:hover   .ssc-cs-status { box-shadow: 0 4px 14px rgba(248, 113, 113, 0.2); }
+.ssc-cs-row.cs-row-beta:hover       .ssc-cs-status { box-shadow: 0 4px 14px rgba(165, 180, 252, 0.2); }
+
+.ssc-cs-buy-wrap { min-width: 105px; }
+
+.ssc-cs-buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 7px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none !important;
+    background: #E59B2A;
+    color: #0f0e0b !important;
+    transition: background 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+    white-space: nowrap;
+}
+
+.ssc-cs-row:hover .ssc-cs-buy-btn {
+    background: #f5b340;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(229, 155, 42, 0.35);
+}
+
+.ssc-cs-unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.2);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ssc-cs-empty {
+    padding: 28px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+.ssc-cs-empty a { color: #E59B2A !important; }
+
+/* Status-Farben */
+.cs-undetected { background: rgba(74, 222, 128, 0.09);  border-color: rgba(74, 222, 128, 0.3);  color: #4ade80; }
+.cs-updating   { background: rgba(229, 155, 42, 0.1);   border-color: rgba(229, 155, 42, 0.35); color: #E59B2A; }
+.cs-detected   { background: rgba(248, 113, 113, 0.09); border-color: rgba(248, 113, 113, 0.3); color: #f87171; }
+.cs-offline    { background: transparent;                border-color: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.35); }
+.cs-beta       { background: rgba(165, 180, 252, 0.09); border-color: rgba(165, 180, 252, 0.3); color: #a5b4fc; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ssc-cs-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px 12px;
+        padding: 14px 16px;
+    }
+    .ssc-cs-name  { grid-column: 1 / -1; }
+    .ssc-cs-os    { grid-column: 1 / -1; }
+    .ssc-cs-status-wrap, .ssc-cs-buy-wrap { min-width: 0; }
+    .ssc-cs-pill  { padding: 6px 12px; font-size: 9px; }
+}
+
+@media (max-width: 480px) {
+    .ssc-cs-status, .ssc-cs-buy-btn, .ssc-cs-unavailable {
+        font-size: 10px;
+        padding: 7px 10px;
+        letter-spacing: 0.8px;
+    }
+}
