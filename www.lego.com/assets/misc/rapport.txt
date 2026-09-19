@@ -1,0 +1,23 @@
+========================================
+ webcloner - rapport de clonage
+========================================
+Source           : https://www.lego.com/fr-fr
+Date             : 2026-09-19 19:01:26
+Duree            : 43.2309 s
+Dossier          : C:\Users\sn\Desktop\Sn_web_gui_pro\build\output\www.lego.com
+
+Pages HTML       : 2
+Feuilles CSS     : 12
+Scripts JS       : 29
+Images           : 348
+Polices          : 30
+Videos           : 0
+Audio            : 0
+Autres           : 100
+----------------------------------------
+Fichiers totaux  : 521
+Poids total      : 35.3 MiB
+Erreurs          : 1
+
+Detail des erreurs :
+  [HTTP 403] https://www.lego.com/ru-ru/favicon.ico
